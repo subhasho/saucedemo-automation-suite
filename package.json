@@ -1,0 +1,16 @@
+{
+  "name": "saucedemo-automation-suite",
+  "version": "1.0.0",
+  "description": "Playwright + Cucumber automation suite for saucedemo.com",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:report": "cucumber-js --format html:reports/cucumber-report.html --format json:reports/cucumber-report.json",
+    "posttest": "node -e \"console.log('Test run complete. Open reports/cucumber-report.html for results.')\""
+  },
+  "keywords": ["playwright", "cucumber", "automation", "saucedemo"],
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.9.0",
+    "playwright": "^1.48.0"
+  }
+}
