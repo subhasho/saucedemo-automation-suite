@@ -6,7 +6,7 @@ Feature: Login to SauceDemo
   Background:
     Given I am on the SauceDemo login page
 
-  @positive @login @Test
+  @positive @login @Test2
   Scenario: Successful login with a valid standard user
     When I log in with the "standard" user
     Then I should be redirected to the inventory page
