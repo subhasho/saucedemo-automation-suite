@@ -23,7 +23,11 @@ Then("I should be redirected to the inventory page", async function () {
   const inventoryPage = new InventoryPage(this.page);
   await expect(this.page).toHaveURL(/inventory\.html/);
   expect(await inventoryPage.isLoaded()).toBeTruthy();
+   expect (await inventoryPage.getPageTitle()).toHaveText("Products");
+   
 });
+
+
 
 Then("I should see the error message {string}", async function (expectedMessage) {
   const errorText = await this.loginPage.getErrorText();

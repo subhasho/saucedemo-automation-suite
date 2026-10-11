@@ -6,7 +6,7 @@ Feature: Login to SauceDemo
   Background:
     Given I am on the SauceDemo login page
 
-  @positive @login
+  @positive @login @Test
   Scenario: Successful login with a valid standard user
     When I log in with the "standard" user
     Then I should be redirected to the inventory page
@@ -25,6 +25,7 @@ Feature: Login to SauceDemo
   Scenario: Login is rejected with an unregistered username
     When I log in with the "unregistered" user
     Then I should see the error message "Epic sadface: Username and password do not match any user in this service"
+    
 
   @negative @login
   Scenario: Login is rejected when credentials are left blank

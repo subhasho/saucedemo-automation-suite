@@ -12,6 +12,18 @@ BeforeAll(async function () {
   sharedBrowser = await chromium.launch({ headless });
 });
 
+/*
+BeforeAll(async function () {
+  sharedBrowser = await chromium.launch({
+    headless: false,          // Open browser
+    slowMo: 1000,             // 1 second delay after every action
+    args: ["--start-maximized"]
+  });
+});
+*/
+
+
+
 AfterAll(async function () {
   if (sharedBrowser) {
     await sharedBrowser.close();
@@ -23,6 +35,20 @@ Before(async function () {
   this.context = await this.browser.newContext();
   this.page = await this.context.newPage();
 });
+
+
+/*
+Before(async function () {
+  this.browser = sharedBrowser;
+
+  this.context = await this.browser.newContext({
+    viewport: null
+  });
+
+  this.page = await this.context.newPage();
+});
+
+*/
 
 After(async function (scenario) {
   if (scenario.result && scenario.result.status === Status.FAILED && this.page) {

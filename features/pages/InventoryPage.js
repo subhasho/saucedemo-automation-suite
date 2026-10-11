@@ -49,6 +49,9 @@ class InventoryPage {
     await this.menuButton.click();
     await this.logoutLink.click();
   }
+   getPageTitle() {
+    return this.pageTitle;
+}
 }
 
 module.exports = { InventoryPage };
